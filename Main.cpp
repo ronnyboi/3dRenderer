@@ -32,13 +32,13 @@ int main()
 	// the square root calculation determines that all sides of the triangle are equal.
 	GLfloat vertices[] =
 	{
-		-0.5f,-0.5f,-0.0f, //lower left
-		0.5f,-0.5f,-0.0f, //lower right
-		-0.5f,0.5f,-0.0f, //upper left
-		-0.5f,0.5f,-0.0f, //upper left
-		0.5f,0.5f,-0.0f, // upper right
-		0.5f,-0.5f,-0.0f, //lower right
+		-0.5f,-0.5f, //lower left
+		0.5f,-0.5f, //lower right
+		0.5f,0.5f, // upper right
+		-0.5f,0.5f, //upper left
 	};
+
+
 
 	//Create a GLFWwindow object of 800 by 800 pixels, naming it 3d renderer
 	GLFWwindow* window = glfwCreateWindow(800, 800, "3DRenderer", NULL, NULL);
@@ -81,17 +81,17 @@ int main()
 	//VBO stands for vertex buffer object (sends the vertices to the gpu)
 	//VAO stands for vertex array object (connects the vertices)
 
-	GLuint VAO, VBO;
+	GLuint VAO[1], VBO[1];
 
-	glGenVertexArrays(1, &VAO);
-	glGenBuffers(1, &VBO);
+	glGenVertexArrays(1, &VAO[1]);
+	glGenBuffers(1, &VBO[1]);
 
-	glBindVertexArray(VAO);
+	glBindVertexArray(VAO[1]);
 
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
 	glEnableVertexAttribArray(0);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -111,15 +111,15 @@ int main()
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		glUseProgram(shaderProgram);
-		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 6);
+		glBindVertexArray(VAO[1]);
+		glDrawArrays(GL_LINE_LOOP, 0, 4);
 		glfwSwapBuffers(window);
 
 		glfwPollEvents();
 	}
 
-	glDeleteVertexArrays(1, &VAO);
-	glDeleteBuffers(1, &VBO);
+	glDeleteVertexArrays(1, &VAO[1]);
+	glDeleteBuffers(1, &VBO[1]);
 	glDeleteProgram(shaderProgram);
 
 
