@@ -34,7 +34,7 @@ int main()
 	{
 		-0.5, -0.5f * float(sqrt(3)) / 3, 0.0f,
 		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
-		0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f
+		-0.5f, 0.5f * float(sqrt(3)) / 3, 0.0f
 	};
 
 	//Create a GLFWwindow object of 800 by 800 pixels, naming it 3d renderer
@@ -109,7 +109,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawArrays(GL_POINTS, 0, 3);
 		glfwSwapBuffers(window);
 
 		glfwPollEvents();
