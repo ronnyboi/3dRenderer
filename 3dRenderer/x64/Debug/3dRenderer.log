@@ -1,2 +1,4 @@
 ﻿  Main.cpp
+C:\Projects\OpenGL\P1.1\3dRenderer\Main.cpp(104,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Projects\OpenGL\P1.1\3dRenderer\Main.cpp(119,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   3dRenderer.vcxproj -> C:\Projects\OpenGL\P1.1\3dRenderer\x64\Debug\3dRenderer.exe

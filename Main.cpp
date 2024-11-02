@@ -38,7 +38,7 @@ int main()
 	};
 
 	//Create a GLFWwindow object of 800 by 800 pixels, naming it 3d renderer
-	GLFWwindow* window = glfwCreateWindow(800, 800, "3DRenderer", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(800, 800, "I made this", NULL, NULL);
 	//error check if the window fails to create
 	if (window == NULL)
 	{
@@ -54,7 +54,7 @@ int main()
 	gladLoadGL();
 
 	// specify the viewport size
-	glViewport(0, 0, 800, 800);
+	glViewport(0, 0, 400, 235);
 
 	// creating a vertex shader open gl unsigned int and assigning the vertex shader code to it.
 	// compiling the shader by passing on the values
@@ -95,22 +95,40 @@ int main()
 	glBindVertexArray(0);
 
 	// specify the viewport color
-	glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
+	glClearColor(0.98f, 0.604f, 0.0f, 1.0f);
 	//clean the back buffer and assign the new front buffer
 	glClear(GL_COLOR_BUFFER_BIT);
 	//swap the back buffer with the front buffer
 	glfwSwapBuffers(window);
 
+	float previousTime = glfwGetTime();
+
+	
+
 	//main while loop
 	while (!glfwWindowShouldClose(window))
 	{
 		//takes care of all the GLFW events
-		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
+		/*glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
-		glfwSwapBuffers(window);
+		glfwSwapBuffers(window);*/
+
+		float time = glfwGetTime();
+		if (time - previousTime >= 2.0f)
+		{
+			glClearColor(0.506f, 0.0f, 0.98f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT);
+			glfwSwapBuffers(window);
+		}
+		else
+		{
+			glClearColor(0.98f, 0.604f, 0.0f, 1.0f);
+			glClear(GL_COLOR_BUFFER_BIT);
+			glfwSwapBuffers(window);
+		}
 
 		glfwPollEvents();
 	}
