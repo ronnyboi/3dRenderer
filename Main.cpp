@@ -32,19 +32,16 @@ int main()
 	// the square root calculation determines that all sides of the triangle are equal.
 	GLfloat vertices[] =
 	{
-		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower left corner
-		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower right corner
-		0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f, // Upper corner
-		-0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f, // Inner left
-		0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f, // Inner right
-		0.0f, -0.5f * float(sqrt(3)) / 3, 0.0f // Inner down
+		-0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower left corner 0
+		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f, // Lower right corner 1
+		-0.5f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f, // Upper left corner 2
+		0.5f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f, // Upper right corner 3
 	};
 
 	GLuint indices[] =
 	{
-		0, 3, 5, // Lower left triangle
-		3, 2, 4, // Upper triangle
-		5, 4, 1 // Lower right triangle
+		0, 1, 2, // Lower left triangle
+		2, 3, 1, // Upper right triangle
 	};
 
 	//Create a GLFWwindow object of 800 by 800 pixels, naming it 3d renderer
@@ -126,7 +123,7 @@ int main()
 		glClear(GL_COLOR_BUFFER_BIT);
 		glUseProgram(shaderProgram);
 		glBindVertexArray(VAOs[0]);
-		glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 		glfwSwapBuffers(window);
 
 		glfwPollEvents();
