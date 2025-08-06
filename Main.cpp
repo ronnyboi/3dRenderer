@@ -32,9 +32,9 @@ int main()
 	// the square root calculation determines that all sides of the triangle are equal.
 	GLfloat vertices[] =
 	{
-		-0.5, -0.5f * float(sqrt(3)) / 3, 0.0f,
-		0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,
-		0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f
+		-0.5, -0.5f , 0.0f,
+		0.5f, -0.5f , 0.0f,
+		-0.5f, 0.5f , 0.0f
 	};
 
 	//Create a GLFWwindow object of 800 by 800 pixels, naming it 3d renderer
