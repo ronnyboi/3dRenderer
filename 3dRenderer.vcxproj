@@ -170,6 +170,7 @@
     <ClInclude Include="VBO.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\Users\Ron\Downloads\brick.png" />
     <Image Include="..\..\..\..\Users\Ron\Downloads\pop_cat.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
