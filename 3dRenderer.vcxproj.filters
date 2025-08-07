@@ -16,6 +16,9 @@
     <Filter Include="Resource Files\Shaders">
       <UniqueIdentifier>{ea8f0d80-443e-4f76-aa97-b47a2df89745}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Textures">
+      <UniqueIdentifier>{e68f6b48-9d13-46a7-a056-32bd609ebc70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="glad.c">
@@ -37,6 +40,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -61,5 +67,13 @@
     <ClInclude Include="EBO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Users\Ron\Downloads\pop_cat.png">
+      <Filter>Resource Files\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

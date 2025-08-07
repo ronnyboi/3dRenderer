@@ -1,5 +1,5 @@
 ﻿  Main.cpp
-  VAO.cpp
+  shaderClass.cpp
+  VBO.cpp
   Generating Code...
-C:\Projects\OpenGL\P1.1\3dRenderer\VAO.cpp(13,63): warning C4244: 'argument': conversion from 'GLsizeiptr' to 'GLsizei', possible loss of data
   3dRenderer.vcxproj -> C:\Projects\OpenGL\P1.1\3dRenderer\x64\Debug\3dRenderer.exe
