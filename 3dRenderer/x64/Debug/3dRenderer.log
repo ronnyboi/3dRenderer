@@ -1,2 +1,5 @@
-﻿  Main.cpp
+﻿  Camera.cpp
+  Main.cpp
+  Generating Code...
+  LINK : C:\Projects\OpenGL\P1.1\3dRenderer\x64\Debug\3dRenderer.exe not found or not built by the last incremental link; performing full link
   3dRenderer.vcxproj -> C:\Projects\OpenGL\P1.1\3dRenderer\x64\Debug\3dRenderer.exe
